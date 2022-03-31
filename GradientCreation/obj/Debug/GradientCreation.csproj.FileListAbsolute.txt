@@ -1,0 +1,10 @@
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\bin\Debug\GradientCreation.exe.config
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\bin\Debug\GradientCreation.exe
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\bin\Debug\GradientCreation.pdb
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\obj\Debug\GradientCreation.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\obj\Debug\GradientCreation.Form1.resources
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\obj\Debug\GradientCreation.Properties.Resources.resources
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\obj\Debug\GradientCreation.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\obj\Debug\GradientCreation.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\obj\Debug\GradientCreation.exe
+C:\Users\USER\Desktop\Programming\GradientCreation\GradientCreation\obj\Debug\GradientCreation.pdb
