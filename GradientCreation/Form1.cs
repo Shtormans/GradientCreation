@@ -19,11 +19,11 @@ namespace GradientCreation
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            int width = 500;
-            int height = 200;
+            int width = 700;
+            int height = 25;
 
-            Color firstColor = Color.Red;
-            Color secondColor = Color.White;
+            Color firstColor = firstColorLook.BackColor;
+            Color secondColor = secondColorLook.BackColor;
             Color currentColor = firstColor;
 
             double colorChangeIndexR = (double)(secondColor.R - firstColor.R) / (double)width;
@@ -53,12 +53,89 @@ namespace GradientCreation
                 currentColor = Color.FromArgb(red, green, blue);
             }
 
-            PictureBox gradientPicture = new PictureBox();
             gradientPicture.Width = width;
             gradientPicture.Height = height;
             gradientPicture.Image = gradient;
+        }
 
-            this.Controls.Add(gradientPicture);
+        private void FirstColorEnter_TextChanged(object sender, EventArgs e)
+        {
+            string firstColorText = firstColorEnter.Text;
+            int pointIndex = firstColorText.IndexOf(',');
+            if (pointIndex == -1)
+            {
+                return;
+            }
+
+            int red;
+            if (!int.TryParse(firstColorText.Substring(0, pointIndex), out red))
+            {
+                return;
+            }
+
+            firstColorText = firstColorText.Substring(pointIndex + 1, firstColorText.Length - pointIndex - 1);
+            pointIndex = firstColorText.IndexOf(',');
+            if (pointIndex == -1)
+            {
+                return;
+            }
+
+            int green;
+            if (!int.TryParse(firstColorText.Substring(0, pointIndex), out green))
+            {
+                return;
+            }
+
+            firstColorText = firstColorText.Substring(pointIndex + 1, firstColorText.Length - pointIndex - 1);
+
+            int blue;
+            if (!int.TryParse(firstColorText, out blue))
+            {
+                return;
+            }
+
+            firstColorLook.BackColor = Color.FromArgb(red, green, blue);
+        }
+
+        private void SecondColorEnter_TextChanged(object sender, EventArgs e)
+        {
+            string secondColorText = secondColorEnter.Text;
+            int pointIndex = secondColorText.IndexOf(',');
+            if (pointIndex == -1)
+            {
+                return;
+            }
+
+            int red;
+            if (!int.TryParse(secondColorText.Substring(0, pointIndex), out red))
+            {
+                return;
+            }
+            
+
+            secondColorText = secondColorText.Substring(pointIndex + 1, secondColorText.Length - pointIndex - 1);
+            pointIndex = secondColorText.IndexOf(',');
+            if (pointIndex == -1)
+            {
+                return;
+            }
+
+            int green;
+            if (!int.TryParse(secondColorText.Substring(0, pointIndex), out green))
+            {
+                return;
+            }
+
+            secondColorText = secondColorText.Substring(pointIndex + 1, secondColorText.Length - pointIndex - 1);
+            pointIndex = secondColorText.IndexOf(',');
+
+            int blue;
+            if (!int.TryParse(secondColorText, out blue))
+            {
+                return;
+            }
+
+            secondColorLook.BackColor = Color.FromArgb(red, green, blue);
         }
     }
 }
