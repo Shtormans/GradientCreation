@@ -15,12 +15,18 @@ namespace GradientCreation
         public Form1()
         {
             InitializeComponent();
+
+            label1.Text = "";
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             int width = 700;
             int height = 25;
+
+            trackBar1.Width = width+26;
+            trackBar1.Maximum = width-1;
+            trackBar1.Visible = true;
 
             Color firstColor = firstColorLook.BackColor;
             Color secondColor = secondColorLook.BackColor;
@@ -136,6 +142,17 @@ namespace GradientCreation
             }
 
             secondColorLook.BackColor = Color.FromArgb(red, green, blue);
+        }
+
+        private void TrackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            Bitmap gradient = new Bitmap(gradientPicture.Image);
+            var pixel = gradient.GetPixel(trackBar1.Value, 0);
+            int red = pixel.R;
+            int green = pixel.G;
+            int blue = pixel.B;
+            label1.Text = $"{red}, {green}, {blue}";
+            label1.Location = new Point(trackBar1.Location.X + trackBar1.Value, label1.Location.Y);
         }
     }
 }
